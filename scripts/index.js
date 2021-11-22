@@ -1,3 +1,5 @@
+import { historyData } from "./historyData.js";
+
 const inputPokemon = document.querySelector("#name");
 const btn = document.querySelector("#btn");
 const idPokemon = document.querySelector("#id-pokemon");
@@ -5,31 +7,6 @@ const namePokemon = document.querySelector("#name-pokemon");
 const abilityPokemon = document.querySelector("#ability-pokemon");
 const weightPokemon = document.querySelector("#weight-pokemon");
 const imgPokemon = document.querySelector("#img-pokemon");
-const historyDataBase = document.querySelector("#history-data");
-
-const historyData = (data) => {
-  let history = [];
-  let historyElements = [];
-
-  history = localStorage.getItem("history");
-
-  if (history) {
-    historyElements = JSON.parse(history);
-    if (data) historyElements.push(data);
-  } else {
-    if (data) historyElements = [data];
-  }
-
-  localStorage.setItem("history", JSON.stringify(historyElements));
-
-  let historyList = "";
-
-  historyElements.forEach((historyElement) => {
-    historyList += `<li>${historyElement}</li>`;
-  });
-
-  historyDataBase.innerHTML = `<ul>${historyList}</ul>`;
-};
 
 const fetchPokemon = async () => {
   if (!inputPokemon.value) return;
@@ -89,4 +66,4 @@ const fetchPokemon = async () => {
 };
 
 btn.addEventListener("click", fetchPokemon);
-historyData(null);
+historyData();
