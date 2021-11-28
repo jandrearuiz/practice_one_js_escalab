@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <h1>POKEMON API</h1>
-    <input type="text" id="name" />
-    <button type="button" id="btn">Consultar</button>
+   <div class="content">
+
+    <h1 class="title">POKEMON API</h1>
+    <input class="box" type="text" id="name" />
+    <button class="" stype="button" id="btn">Consultar</button>
 
     <h2>DATOS DEL POKEMON CONSULTADO</h2>
     <div class="pokemon" id="img-pokemon"></div>
@@ -23,6 +27,7 @@
 
     <h2>HISTORIAL DE CONSULTA</h2>
     <div id="history-data"></div>
+   </div>
 
     <script src="./scripts/index.js" defer type="module"></script>
   </body>
